@@ -1,26 +1,34 @@
-//RECUPERANDO O BOTÃO1 COM O GETELEMENTBYID
-const botao = document.getElementById("btn-1");
-
-//RECUPERANDO UM ITEM ESPECIFICO COM A 
-//FUNÇÃO querySelector(parâmetro)
-// const seletor = document.querySelector("li")
-// console.log(seletor.textContent)
-
-// Recuperar uma lista de elementos com a function querySelectoraALL
-const seletores = document.querySelectorAll("li");
-
-seletores.forEach((item)=>{
-
-    if(item.textContent == "item-15") {
-        let meuItem = item;
-        console.log(`Items selecionados : ${meuItem.textContent}`);
-        meuItem.textContent = "Ta dominado!"
+function mudaCor() {
+    let r = 0;
+    let g = 0;
+    let b = 0;
+  
+    r = Math.round(Math.random() * 255);
+    g = Math.round(Math.random() * 255);
+    b = Math.round(Math.random() * 255);
+  
+    const cabecalho = document.querySelector(".cabecalho");
+    cabecalho.style.backgroundColor = `rgb(${r},${g},${b})`;
+  
+    const banner1 = document.querySelector(".banner-1");
+    const banner2 = document.querySelector(".banner-2");
+  
+    const images = [
+      "image-1.jpg",
+      "image-2.jpg",
+      "image-3.jpg"
+    ];
+    let currentImageIndex = 0;
+  
+    function changeImage() {
+      banner1.style.backgroundImage = `url(${images[currentImageIndex]})`;
+      banner2.style.backgroundImage = `url(${images[currentImageIndex]})`;
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      setTimeout(changeImage, 2000);
     }
-})
-
-//setTimeOut
-//serInterval
-//Random
-//Math.Ceil
-//Math.Random
-//Math.Floor
+  
+    changeImage();
+  }
+  
+  mudaCor();
+  
