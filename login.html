@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar</title>
     <script src="./js/login.js" defer></script>
+    <link rel="stylesheet" href="./css/pag-login.css">
+    <title>Entrar</title>
 </head>
 <body>
 
+
+    <div id="msg"></div>
+
     <div class="info">
         <form action="index.html" method="get" onsubmit="return false">
-
             <div>
                 <label for="idUser">Usuário</label>
                 <input type="text" name="nmUser" id="idUser" placeholder="Usuário">
@@ -21,14 +24,11 @@
                 <input type="password" name="pass" id="idPass" placeholder="Senha">
             </div>
             <div>
-                
                 <button type="submit" id="btnSubmit">Entrar</button>
                 <button type="reset" id="btnReset">Limpar</button>
-
             </div>
-
         </form>
     </div>
-    
+
 </body>
 </html>
